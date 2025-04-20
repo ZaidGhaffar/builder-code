@@ -1,0 +1,21 @@
+services:
+  - type: web # Type should match your service type on Render
+    name: Builder-Pro # Make sure this matches your service name on Render
+    env: node
+    rootDir: backend # Specify the directory for your backend code
+    plan: free # Or your chosen plan
+    buildCommand: "npm install"
+    startCommand: "npm run start"
+    envVars:
+      - key: NODE_VERSION # Optional: specify Node version if needed
+        value: 18
+      # Add any other environment variables needed by your backend here
+      # - key: FIREBASE_PROJECT_ID
+      #   sync: false
+    buildFilter: # Optional: Only rebuild if backend files change
+      paths:
+      - backend/**
+    # ---- Add this section to install system packages ----
+    nativeEnvironment:
+      systemPackages:
+        - name: poppler-utils # Debian/Ubuntu package name for Poppler tools

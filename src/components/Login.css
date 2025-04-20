@@ -1,0 +1,77 @@
+/* General Page Layout */
+body {
+    background-color: #F5F5F5;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Centering the Login Box */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Header Styling */
+  .login-header {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #F1F3F4;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-header h1 {
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  /* Centering the Sign-in Box */
+  .login-main {
+    background-color: transparent;
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 100px; /* Creates space below fixed header */
+  }
+  
+  /* Center Clerk Sign-In Component */
+  .clerk-sign-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* Sign-up Link */
+  .signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .signup-link a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  /* Footer */
+  .login-footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+  

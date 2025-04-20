@@ -1,0 +1,35 @@
+.recent-activity {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center; /* Center text content */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+  }
+  
+  .recent-activity h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Optional: Adjust heading size */
+    color: #333; /* Optional: Add a darker color for the heading */
+  }
+  
+  .recent-activity ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+    width: 100%; /* Ensure the list takes full width */
+    max-width: 600px; /* Optional: Limit the width for better readability */
+  }
+  
+  .recent-activity li {
+    margin-bottom: 10px; /* Increase spacing between list items */
+    font-size: 1rem; /* Optional: Adjust font size */
+    color: #555; /* Optional: Add a muted color for list items */
+    padding: 8px; /* Optional: Add padding for better spacing */
+    background-color: #fff; /* Optional: Add a background color */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  }

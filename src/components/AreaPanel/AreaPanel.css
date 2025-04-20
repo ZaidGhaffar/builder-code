@@ -1,0 +1,220 @@
+.area-panel {
+  width: 280px;
+  
+  
+  background-color: transparent;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 80px; /* Adjust based on your header height */
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.Sort {
+  background: #FFFFFF;
+  border-radius: 12px;
+  min-height: 332px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  height: calc(100vh - 120px); /* Adjust based on header height and padding */
+  overflow-y: auto;
+}
+
+.area-panel-header {
+  padding: 8px 0;
+  margin-bottom: 8px;
+}
+
+.area-panel-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+}
+
+/* Room item styling */
+.measurement-item {
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 56px;
+}
+
+.measurement-item:hover {
+  border-color: #D8D2FB;
+  background-color: #F8F7FE;
+}
+
+.measurement-item.selected {
+  border: 2px solid #392C8C;
+  background-color: #F8F7FE;
+}
+
+/* Tool icon in room item */
+.tool-icon {
+  width: 32px;
+  height: 32px;
+  background: #F5F5F5;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.measurement-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.measurement-name {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333333;
+}
+
+.measurement-value {
+  font-size: 14px;
+  color: #666666;
+}
+
+/* Three dots menu */
+.three-dots-menu {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.three-dots-menu:hover {
+  background-color: #F5F5F5;
+}
+
+/* Menu popup */
+.menu-popup {
+  position: absolute;
+  right: -8px;
+  top: 100%;
+  width: 120px;
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.menu-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.menu-option:hover {
+  background-color: #F5F5F5;
+}
+
+.menu-option.delete:hover {
+  color: #D32F2F;
+}
+
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+  .area-panel {
+    width: 320px;
+    padding: 20px;
+  }
+
+  .Sort {
+    padding: 20px;
+  }
+
+  .measurement-item {
+    padding: 16px;
+  }
+}
+
+/* Update tablet landscape styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .area-panel {
+    width: 220px;
+    padding: 10px;
+  }
+  
+  .Sort {
+    padding: 10px;
+    gap: 4px;
+    min-height: 280px;
+  }
+  
+  .area-panel-header h3 {
+    font-size: 15px;
+  }
+}
+
+/* Fix tablet portrait styles */
+@media (min-width: 600px) and (max-width: 767px) {
+  .area-panel {
+    width: 200px;
+    padding: 8px;
+    left: -210px; /* Match width + padding */
+  }
+  
+  .area-panel.visible {
+    left: 0;
+  }
+  
+  .Sort {
+    padding: 8px;
+    gap: 4px;
+    min-height: 260px;
+  }
+  
+  .area-panel-header h3 {
+    font-size: 14px;
+  }
+  
+  .measurement-info {
+    gap: 2px;
+  }
+}
+
+/* Update mobile styles to be more compact */
+@media (max-width: 479px) {
+  .area-panel-header {
+    padding: 4px 0;
+    margin-bottom: 4px;
+  }
+  
+  .menu-popup {
+    width: 100px;
+    right: 0;
+  }
+  
+  .menu-option {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

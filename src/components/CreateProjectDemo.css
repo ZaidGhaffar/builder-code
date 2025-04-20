@@ -1,0 +1,44 @@
+.create-project-demo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height to center vertically */
+  background-color: #F5F5F5;
+}
+
+.create-project-demo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Adjust the gap between elements as needed */
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-project-button,
+.demo-project-button {
+  display: flex;
+  width: 185px;
+  height: 40px;
+  padding: 0px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px; /* Ensure consistent border radius */
+  color: #FFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.create-project-button {
+  background: #483EA8;
+}
+
+.demo-project-button {
+  background: #333;
+}

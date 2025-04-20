@@ -1,0 +1,25 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.logo-accent {
+  color: #4a6cf7;
+}
+
+.logo-small {
+  font-size: 18px;
+}
+
+.logo-medium {
+  font-size: 22px;
+}
+
+.logo-large {
+  font-size: 28px;
+}

@@ -1,0 +1,207 @@
+/* src/components/FloatingPane.css */
+.floating-pane {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  border-radius: 10px;
+  border: 1px solid #E0E0E0;
+  transition: all 0.3s ease;
+  padding: 8px;
+}
+
+.floating-pane.collapsed {
+  height: 40px;
+  opacity: 0.8;
+}
+
+.floating-pane.expanded {
+  height: auto;
+  opacity: 1;
+}
+
+.pane-content {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.toggle-button {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #F5F5F5;
+  color: #333333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-button:hover {
+  background-color: #E0E0E0;
+}
+
+.floating-pane button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: #F5F5F5;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.floating-pane button:hover {
+  background-color: #E0E0E0;
+}
+
+.floating-pane .wide-button {
+  width: auto;
+  padding: 6px 12px;
+  background-color: #F5F5F5;
+  color: #333333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+  .floating-pane {
+    padding: 12px;
+    bottom: 24px;
+    right: 24px;
+  }
+
+  .floating-pane button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .toggle-button {
+    padding: 8px 16px;
+    font-size: 15px;
+  }
+}
+
+/* Desktop (1024px to 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .floating-pane {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .floating-pane button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Tablet Landscape (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .floating-pane {
+    bottom: 16px;
+    right: 16px;
+    padding: 6px;
+  }
+
+  .pane-content {
+    gap: 6px;
+  }
+
+  .floating-pane button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .toggle-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Tablet Portrait (600px to 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+  .floating-pane {
+    bottom: 14px;
+    right: 14px;
+    padding: 6px;
+  }
+
+  .pane-content {
+    gap: 5px;
+  }
+
+  .floating-pane button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .toggle-button {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile Large (480px to 599px) */
+@media (min-width: 480px) and (max-width: 599px) {
+  .floating-pane {
+    bottom: 12px;
+    right: 12px;
+    padding: 5px;
+  }
+
+  .pane-content {
+    gap: 4px;
+  }
+
+  .floating-pane button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .toggle-button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .floating-pane.expanded {
+    max-width: calc(100% - 24px);
+  }
+}
+
+/* Mobile Small (up to 479px) */
+@media (max-width: 479px) {
+  .floating-pane {
+    bottom: 10px;
+    right: 10px;
+    padding: 4px;
+  }
+
+  .pane-content {
+    gap: 3px;
+  }
+
+  .floating-pane button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .toggle-button {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  .floating-pane.expanded {
+    max-width: calc(100% - 20px);
+  }
+}

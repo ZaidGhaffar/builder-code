@@ -1,0 +1,85 @@
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 150px;
+  background-color: #F6F6F6;
+  padding-top: 80px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.sidebar.expanded {
+  width: 280px;
+}
+
+
+.sidebar-hover-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 15px;
+  z-index: 99;
+}
+
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #5C5E64;
+  white-space: nowrap;
+  text-align: left;
+}
+
+
+.icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin-right: 12px;
+}
+
+.sidebar .label {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  flex-grow: 1;
+}
+
+.sidebar.expanded .label {
+  opacity: 1;
+}
+
+
+.sidebar:not(.expanded) .nav-button {
+  justify-content: flex-start;
+  padding-left: calc((80px - 24px) / 2); 
+}
+
+.sidebar:not(.expanded) .icon {
+  margin-right: 0;
+}
+
+
+.nav-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+/* Icon size adjustment */
+.icon {
+  min-width: 30px; /* Ensure icons have consistent width */
+  height: 24px;
+}

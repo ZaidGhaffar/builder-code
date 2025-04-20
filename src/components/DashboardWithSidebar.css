@@ -1,0 +1,68 @@
+.dashboard-with-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  background-color: #F5F5F5;
+  padding-bottom: 84px; /* Ensure content doesn't hide behind the footer */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  border: 10px solid greenyellow;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin-left: 220px; /* Adjusted to default to expanded sidebar width */
+  transition: margin-left 0.3s;
+}
+
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Sticky footer styles */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 84px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between the links */
+}
+
+.footer-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.footer-icon {
+  margin-left: 8px; /* Space between the text and the icon */
+  width: 20px;
+  height: 20px;
+}

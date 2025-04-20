@@ -1,0 +1,211 @@
+/* Update the existing media queries and add new ones for better responsiveness */
+
+/* Existing media queries with improvements */
+.content-area{
+  padding-top: 60px; /* Same height as .navbar */
+}
+
+
+.create-project-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* Adjust for navbar height */
+  padding: 1rem;
+  text-align: center;
+}
+
+.create-project-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-project-button:hover {
+  background-color: #0056b3;
+}
+
+
+@media (max-width: 1024px) {
+  .main-content {
+    padding: clamp(0.5rem, 2vw, 0.9375rem);
+  }
+
+  .pdf-container {
+    width: 100%;
+    height: 70vh;
+  }
+
+  .pdf-tools {
+    left: clamp(150px, 20vw, 250px);
+    width: calc(100% - 40px);
+  }
+
+  .file-cards-container {
+    justify-content: center;
+    margin-left: clamp(0.5rem, 1.5vw, 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-with-sidebar {
+    flex-direction: column;
+  }
+
+  .content-area {
+    min-height: calc(100vh - 58px);
+    flex-direction: column;
+    
+  }
+  
+
+  .main-content {
+    padding: clamp(0.25rem, 1vw, 0.5rem);
+    margin-top: 60px;
+  }
+
+  .pdf-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 60vh;
+    width: 100%;
+  }
+
+  .files-view {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .pdf-view-area {
+    width: 100%;
+    height: 60vh;
+  }
+
+  .pdf-tools {
+    left: 0;
+    width: 100%;
+    padding: 0 1rem;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .file-cards-container {
+    margin-left: 0;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .empty-state-container {
+    width: 90%;
+  }
+
+  .file-upload {
+    padding: 1rem;
+  }
+
+  .pdf-content {
+    margin: 2%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.25rem;
+  }
+
+  .files-view {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pdf-tools {
+    padding: 0 0.5rem;
+  }
+
+  .create-project-button {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .pdf-container {
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+
+  .pdf-view-area {
+    height: 50vh;
+  }
+
+  .file-cards-container {
+    gap: 0.25rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+}
+
+/* Add a new media query for very small devices */
+@media (max-width: 360px) {
+  .pdf-view-area {
+    height: 40vh;
+  }
+
+  .empty-state-container {
+    width: 95%;
+    padding: 0.25rem;
+  }
+
+  /* .create-project-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+  } */
+
+  .footer-link {
+    font-size: 0.875rem;
+  }
+
+  .footer-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Add a media query for tablets in portrait orientation */
+@media (min-width: 481px) and (max-width: 768px) {
+  .file-cards-container {
+    justify-content: space-around;
+  }
+}
+
+/* Add a media query for landscape orientation on mobile */
+@media (max-height: 480px) and (orientation: landscape) {
+  .pdf-container {
+    height: 85vh;
+  }
+
+  .pdf-view-area {
+    height: 85vh;
+  }
+
+  .footer {
+    height: 60px;
+  }
+}

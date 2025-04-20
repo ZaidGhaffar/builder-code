@@ -1,0 +1,590 @@
+  /* src/components/FloatingToolbar.css */
+  .floating-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #D8D2FB;
+    border: 5px solid #392C8C;
+    border-radius: 10px;
+    padding: 8px 12px;
+    height: 56px;
+    position: relative;
+  }
+  
+  .main-div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    z-index: 1002;
+  }
+  
+  /* Tool buttons */
+  .floating-toolbar button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  .floating-toolbar button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .floating-toolbar button.active-tool {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* More menu button */
+    .more-menu-button {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+  }
+   
+   .more-menu-button svg {
+    width: 24px;
+    height: 24px;
+    fill: #392C8C;
+  } 
+   
+  /* More menu dropdown */
+  .more-menu-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 8px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1003;
+  }
+  
+  .more-menu-dropdown.visible {
+    display: flex;
+  }
+  
+  .more-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .more-menu-item:hover {
+    background-color: #F5F5F5;
+  }
+  
+  .more-menu-item svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Hide these tools in tablet view */
+  .hidden-on-tablet {
+    display: flex;
+  }
+  
+  /* SVG icons */
+  .PolylineIcon svg,
+  .polygon svg,
+  .rectangle2Point svg,
+  .rectangle3Point svg,
+  .stickyNote svg,
+  .rule svg,
+  .ScaleIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* M button */
+  .action-button {
+    width: 56px;
+    height: 56px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .action-button svg {
+    width: 56px;
+    height: 56px;
+  }
+  
+  /* Dropdown styling */
+  .dropdown-container {
+    position: relative;
+  }
+  
+  .dropdown-menu1 {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 280px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+  }
+  
+  .dropdown-item1 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 12px;
+  }
+  
+  .dropdown-item2 {
+    width: 100%;
+    height: 40px;
+    background: #F5F5F5;
+    border: none;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 16px;
+  }
+  
+  .buttons-distance {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .dropdown-item3,
+  .dropdown-item4 {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .dropdown-item3 {
+    background: #F5F5F5;
+    color: #333333;
+  }
+  
+  .dropdown-item4 {
+    background: #392C8C;
+    color: #FFFFFF;
+  }
+  
+  .dropdown-item3:hover {
+    background: #E0E0E0;
+  }
+  
+  .dropdown-item4:hover {
+    background: #2C1F7A;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .floating-toolbar {
+      padding: 8px;
+    }
+  
+    .floating-toolbar button {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-div {
+      padding: 12px;
+    }
+  
+    .floating-toolbar {
+      width: auto;
+      justify-content: flex-start;
+      overflow-x: hidden;
+    }
+  
+    /* Show more menu button */
+    .more-menu-button {
+      display: flex;
+    }
+  
+    /* Hide specific tools on tablet */
+    .hidden-on-tablet {
+      display: none;
+    }
+  
+    .floating-toolbar button svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-div {
+      padding: 8px;
+    }
+  
+    .floating-toolbar {
+      padding: 6px;
+      gap: 4px;
+    }
+  
+    .floating-toolbar button {
+      width: 32px;
+      height: 32px;
+    }
+  
+    .floating-toolbar button svg {
+      width: 18px;
+      height: 18px;
+    }
+  
+    .more-menu-button {
+      width: 32px;
+      height: 32px;
+    }
+  
+    .more-menu-button svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+/* ================================== */
+/* == ADDED STYLES FOR INFO POPUP == */
+/* ================================== */
+
+/* --- Tool Info Popup Styles --- */
+.tool-info-popup {
+  position: absolute;
+  
+  top: 85px; /* Example: Place it below the approximate bottom of the toolbar area within main-div */
+  /* Start near the left edge of the toolbar container */
+  left: 10px; /* Adjust horizontal position as needed */
+  margin-top: 8px; /* Add a small gap below the toolbar */
+
+  /* Visual appearance */
+  background-color: #ffffff;
+  
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+
+  /* Sizing */
+  width: max-content; /* Fit the content */
+  max-width: 250px; /* Prevent it from becoming too wide */
+
+  z-index: 1003; /* Ensure it appears above toolbar (1002) and dropdown (1003 maybe?) - adjust if needed */
+  font-size: 14px; /* Base font size */
+}
+
+/* Styling for the tool name inside the popup */
+.tool-info-name {
+  font-weight: bold;
+  font-size: 0.9em; /* Slightly smaller than base */
+  margin-bottom: 5px;
+  color: #333; /* Dark grey text */
+}
+
+/* Styling for the description inside the popup */
+.tool-info-description {
+  font-size: 0.85em; /* Even smaller text */
+  color: #555; /* Medium grey text */
+  line-height: 1.4; /* Adjust spacing between lines */
+}
+
+/* Optional: Add a small triangle pointer above the popup */
+.tool-info-popup::before {
+  content: '';
+  position: absolute;
+  bottom: 100%; /* Position the triangle touching the top edge */
+  left: 20px; /* Adjust horizontal position of the triangle - align under first/second icon? */
+  margin-left: -5px; /* Offset by half the border width to center the tip */
+  border-width: 5px;
+  border-style: solid;
+  /* Creates an upward-pointing triangle */
+  border-color: transparent transparent white transparent;
+  /* Add a subtle border/shadow matching the popup's look */
+  filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.05));
+}
+
+
+/* --- Adjustments for Media Queries --- */
+
+/* Make popup position relative to potentially wrapped layout */
+@media (max-width: 768px) {
+  .tool-info-popup {
+    /* Position relative to the main-div which now wraps */
+    /* Place it below where the toolbar likely ends */
+    top: auto; /* Let browser determine top based on content flow */
+    bottom: -80px; /* Position below the wrapped toolbar (adjust value as needed) */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Correct centering */
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 8px; /* Add space below */
+    width: calc(100% - 20px); /* Responsive width */
+    max-width: 300px; /* Max width */
+  }
+
+  .tool-info-popup::before {
+    /* Position triangle at the top center */
+    top: -10px; /* Position above the popup */
+    bottom: auto; /* Remove bottom positioning */
+    left: 50%;
+    margin-left: -5px;
+    /* Pointing down */
+    border-color: white transparent transparent transparent;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+  }
+}
+
+@media (max-width: 480px) {
+   .tool-info-popup {
+       bottom: -100px; /* Adjust further down if toolbar wraps more */
+       /* Keep other mobile styles */
+   }
+    .tool-info-popup::before {
+     /* Keep mobile triangle styles */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* In FloatingToolbar.css - Add this section */
+
+/* ===================================== */
+/* == STYLES FOR INSTRUCTION POPUP == */
+/* ===================================== */
+
+.instruction-popup {
+  position: absolute;
+  top: 75px; /* Adjust position relative to .main-div */
+  left: 10px; /* Adjust horizontal position */
+  margin-top: 8px;
+  background-color: #f8f8f8; /* Slightly different background? */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 1003;
+  width: max-content;
+  max-width: 280px; /* Allow slightly wider */
+}
+
+.instruction-popup-title {
+  font-weight: bold;
+  font-size: 1em; /* Match base size */
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.instruction-popup-description {
+  font-size: 0.9em;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Optional: Triangle for instruction popup */
+.instruction-popup::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 25px; /* Adjust horizontal position */
+  margin-left: -6px; /* Adjust for potentially larger triangle */
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #f8f8f8 transparent; /* Match background */
+  /* Add subtle border/shadow */
+   filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.08));
+}
+
+/* --- Adjustments for Media Queries --- */
+/* Copy and adapt the media query adjustments from the tool-info-popup */
+/* You might want different positioning or sizing for this specific popup */
+
+/* Improve toolbar responsiveness */
+/* Tablet-specific improvements (768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .floating-toolbar {
+    height: 52px;
+    padding: 6px 10px;
+    gap: 6px;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .main-div {
+    padding: 12px;
+    gap: 10px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .action-button {
+    width: 52px;
+    height: 52px;
+  }
+  
+  .action-button svg {
+    width: 52px;
+    height: 52px;
+  }
+  
+  /* Ensure dropdown appears in the right position */
+  .dropdown-menu1 {
+    right: 0;
+    width: 260px;
+  }
+  
+  /* Adjust tool info popup position for tablet */
+  .tool-info-popup {
+    top: 75px;
+    left: 15px;
+  }
+}
+
+/* Adjust existing tablet breakpoint */
+@media (max-width: 768px) {
+  /* Keep existing styles and add: */
+  .floating-toolbar {
+    justify-content: center;
+  }
+  
+  .main-div {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-div {
+    padding: 8px 4px;
+    gap: 6px;
+  }
+  
+  .floating-toolbar {
+    height: 40px;
+    padding: 4px 6px;
+    flex-shrink: 1;
+    width: calc(100% - 10px);
+  }
+  
+  .action-button {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+  
+  .action-button svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .dropdown-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .tool-info-popup {
+    bottom: -90px;
+    max-width: 220px;
+    font-size: 12px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+  .floating-toolbar {
+    height: 36px;
+    padding: 3px 4px;
+    gap: 2px;
+  }
+  
+  .floating-toolbar button {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+  }
+  
+  .floating-toolbar button svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .action-button {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+  
+  .action-button svg {
+    width: 36px;
+    height: 36px;
+  }
+}
