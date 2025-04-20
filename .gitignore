@@ -34,3 +34,13 @@ yarn-error.log*
 
 # cursor
 .cursor/
+
+# sensitive files and credentials
+**/credentials.json
+**/service-account*.json
+**/*.key
+**/*.pem
+**/*.p12
+**/private-key*.json
+**/secrets*.json
+**/config*.json
